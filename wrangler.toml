@@ -8,7 +8,7 @@ compatibility_date = "2023-08-14"
 [vars]
 MY_VARIABLE = "production_value"
 API_URL = "https://api.themoviedb.org/3"
-API_KEY = "TMDB_API_KEY" # paste here your TMDB API key
+TMDB_API_KEY = "TMDB_API_KEY" # paste here your TMDB API key
 
 # Bind a KV Namespace. Use KV as persistent storage for small key-value pairs.
 # Docs: https://developers.cloudflare.com/workers/runtime-apis/kv

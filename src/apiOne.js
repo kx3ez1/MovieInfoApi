@@ -10,7 +10,7 @@ export const handleTrendingDay = async (request, env, ctx) => {
 	if(page === null || page === '' || page === undefined || page === 'undefined' || page === 'null' || page === '0') {
 		page = 1;
 	}
-	const resp = await fetch(env.API_URL + trendingDay + '&api_key=' + env.API_KEY + '&page=' + page);
+	const resp = await fetch(env.API_URL + trendingDay + '&api_key=' + env.TMDB_API_KEY + '&page=' + page);
 	const data = await resp.json();
 	let resp2 =  new Response(JSON.stringify(data), {
 			headers: {
@@ -29,7 +29,7 @@ export const handleTrendingWeek = async (request, env, ctx) => {
 	if(page === null || page === '' || page === undefined || page === 'undefined' || page === 'null' || page === '0') {
 		page = 1;
 	}
-	const resp = await fetch(env.API_URL + trendingWeek + '&api_key=' + env.API_KEY + '&page=' + page);
+	const resp = await fetch(env.API_URL + trendingWeek + '&api_key=' + env.TMDB_API_KEY + '&page=' + page);
 	const data = await resp.json();
 	let resp2 =  new Response(JSON.stringify(data), {
 			headers: {
@@ -45,7 +45,7 @@ export const handleGetMovieDetails = async (request, env, ctx) => {
 	const url = new URL(request.url);
 	const queryParams = url.searchParams;
 	const movieId = queryParams.get('id');
-	const resp = await fetch(env.API_URL + '/movie/' + movieId + '?api_key=' + env.API_KEY);
+	const resp = await fetch(env.API_URL + '/movie/' + movieId + '?api_key=' + env.TMDB_API_KEY);
 	const data = await resp.json();
 	let resp2 =  new Response(JSON.stringify(data), {
 			headers: {
